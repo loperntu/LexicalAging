@@ -271,7 +271,7 @@ million books) of all books ever printed.
 
 > Analysis of this corpus enables us to investigate cultural trends quantitatively. We survey the vast terrain of 'culturomics,' focusing on linguistic and cultural phenomena that were reflected in the English language between 1800 and 2000. We show how this approach can provide insights about fields as diverse as **lexicography**, the **evolution of grammar**, collective memory, the adoption of technology, the pursuit of fame, censorship, and historical epidemiology.(*Science, 331(6014): 176–82*, 2011).
 
-- CED?? project?? 
+- Google's BigQuery Provides Free Access to GDELTGDELT project (May 30, 2014)
 
 --- &twocol
 
@@ -325,12 +325,12 @@ relationships are recorded.
 
 ```{r opts.label = 'interactive', results = 'asis'}
 require(googleVis)
-#load("~/academic_activities/talks and tutorials/2013/ntnu/mot/mot.RData")
+load("~/Coding/R_lab/BIGLEX/LexicalAging/mot/mot.RData")
 # head(convdata)
 # head(compdata)
-#Modal <- gvisMotionChart(convdata, idvar="VERB", timeva="DECADE") 
-#print(Modal, tag ='chart')
-#plot.gvis(Modal) 
+Modal <- gvisMotionChart(convdata, idvar="VERB", timeva="DECADE") 
+print(Modal, tag ='chart')
+plot.gvis(Modal) 
 ```
 
 
@@ -351,22 +351,32 @@ Depending on you research topic!
 
 
 
---- &twocol 
+---
 
 ## New Methodological Issues [2]: Unit
 
 A two-edged Sword cuts Both Ways: 
 `How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2013)`
+- (with discrete views on the Units of Lexicon)
+- `全台大都會計算這題｀
+`阿里巴巴領導人馬雲端出新服務`
+
+
+
+---&twocol
+
+## New Methodological Issues [2]: Unit
 
 *** =left
-- (with discrete views on the Units of Lexicon)
-- 台北市長春藥店; 大都會
+
 - `這不是朱學恆` 效應
 
 *** =right
-
-<iframe src='assets/img/freqspec.pdf' width=200px height=90px>
+<iframe src='assets/img/plurk_hapax.png' width=200px height=90px>
 </iframe> 
+
+
+
 
 --- &twocol 
 
@@ -389,13 +399,12 @@ A two-edged Sword cuts Both Ways:
 
 ## The BIG LEXICON Project (2014-)
 
-- **Functional take**, again: 'the smaller units familiar from structural analysis are *not* independent units, but rather emerge from the larger stored units via a network of connections among them'.
-
-- A bold (but sincere) proposal:
-  - Segmentation as annotation (of wordhood)
-  - __Lexical units__  * __Multiple dimensions__ (so far: 200,000 * 87 matrix)
 
 
+- Big Lexicon 關心的是 lexeme 在各個面向的功能性「實現」 **Functional take**, again: 'the smaller units familiar from structural analysis are *not* independent units, but rather emerge from the larger stored units via a network of connections among them'.
+－ **Hack-the-speaker** instead of (/complement with) ask-the-speaker approach
+    - Word Segmentation as *probabilistic* annotation (of wordhood): unsupervised CWS system (Pierre, 2014) + BIGLEX
+    - __Lexical units__  * __Multiple dimensions__ (current: 250,000 * 107 matrix)
 
 ---
     
@@ -403,7 +412,7 @@ A two-edged Sword cuts Both Ways:
 
 | **Module.Variable**        | **Description**                       |
 |---------------------|---------------------------------------|
-| `concept.sense`     | word sense number from [Chinese Wordnet, CWN](http://lope.linguistics.ntu.edu.tw/cwn/), please [help](http://lope.linguistics.ntu.edu.tw/cwikin/)       |
+| `concept.sense`     | word sense number from [Chinese Wordnet, CWN](http://lope.linguistics.ntu.edu.tw/cwn2/), please [help](http://lope.linguistics.ntu.edu.tw/cwikin/)       |
 | `concept.gloss`     | sense definitions from CWN    |
 | `concept.relations` | lexical semantic relations      |
 | `emotion.polarity`  | polarity of descriptive emotional words|
@@ -416,7 +425,9 @@ A two-edged Sword cuts Both Ways:
 | `frequency.childes`   | frequency of CHILDES Corpus  |
 | `frequency.ptt`       | frequency of PTT                    |
 
-**AND MANY MORE!** modules in progress: 情緒 發展歷程 語義 使用頻率 年紀 關係 性別 教學難易 部首概念 意類 知識本體 社會心理人格 . . . . . . . . . . . . . .  
+**AND MANY OTHERS!** modules in progress: 情緒 發展歷程 語義 使用頻率 年紀 關係 性別 教學難易 部首概念 意類 知識本體 社會心理人格 . . . . . . . . . . . . . .  
+
+
 
 
 --- .centrepre &vcenter
@@ -429,18 +440,20 @@ A two-edged Sword cuts Both Ways:
     ---
     Question: 
     ---
-     
+  
+
+
 
 --- .centrepre &vcenter
 
 <a class='example'>Your Turn</a>
 
     Brainstorm: what are some of the trends/corelation 
-    that you  might want to explore? What additional 
+    that you might want to explore? What additional 
     variables would you need to create? What other 
     data sources might you want to use? Pair up and 
     brainstorm for 1 minute.
-    
+
 
 
 
@@ -479,7 +492,7 @@ press *p*
 
 ## Modeling Neologistic Behavour [1]
 
-Stage in Life-cycle (Renouf, 2013)
+詞彙的生命週期 Stage in Life-cycle (Renouf, 2013)
 - Increase in frequency: gradual, or sudden if in vogue
 - Orthographic adjustment
 - Lexical productivity
@@ -500,13 +513,15 @@ Stage in Life-cycle (Renouf, 2013)
 
 <img src="assets/img/ptt.png" alt="Drawing" style="width: 600px;"/>
 
-- Time series predictive model against human judgement.
+- **Time series predictive model** against human judgement.
 
 ---
 
-## PTT Corpus
+## PTT Corpus (http://140.112.147.131/PttProject/)
 
-<img src="assets/img/pttcorpus.png" alt="Drawing" style="width: 600px;"/>
+PTT (批踢踢) 是台灣（鄉民）社會的鏡子，PTT 語料庫動態地反映與同步語言使用與社會心理。
+
+<img src="assets/img/flowchart_ptt.png" alt="Drawing" style="width: 800px;"/>
 
 
 
@@ -531,13 +546,13 @@ term to survive in the long term. (Altmann, 2011)
 
 ## Modeling Lexical Aging: Our Second Comings 
 
+不是二元的分類問題，應有新的訓練與評測方法
+
 1. Use `google book ngram` as training data (to infer the laws), and `ptt` as test data.
 
-2. Previous efforts exploit the syntagmatic patterns of a candidate neologism (e.g., via `collocate profile`).
+2. In addition to previous efforts that exploit the syntagmatic patterns of a candidate neologism (e.g., via `collocate profile`), we also propose to incorporate paradigmatic patterns (via creating `social network` of the candidate).
 
-3. we propose to incorporate paradigmatic patterns (via `social network` of the candidate).
-
-4. Evaulate the preditions against large-scale human jugements (via questionnaire web application or APP games)
+4. Power the predition model with weights from human jugements (via questionnaire web application or APP games)
 
 
 ---
@@ -547,17 +562,17 @@ term to survive in the long term. (Altmann, 2011)
 **Special considerations**
 
 詞彙不像人，可以離群索居，成就自己的意義。詞彙的意義是透過系統間的關係相對定義出來的。
-因此詞彙的社會行為。(以魯蛇為例，利用批踢踢找出共現，算出相𨶙詞彙，算出依存度)。
+因此我們認為應該關注詞彙的社會行為。(以魯蛇為例)。
 
 
-1. Frequency Diversity (e.g., the dissemination of words across individuals/generations/topics/)
+1. Frequency Diversity (e.g., the dissemination of words across individuals/generations/topics/boards/...)
 
 2. Strength of Ties
 
 3. Niche (when different forms compete to express the same meaning)
 
 ```
-**Distributional Semantic Model**
+**Distributional (Semantic) Model based on the BIG LEXICON**
 ```
 
 
