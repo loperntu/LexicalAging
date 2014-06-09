@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Applied Lexicology with Big Data</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Applied Lexicology with Big Data">
+  <meta name="author" content="謝舒凱    台大語言所 語言處理，知識本體與人文計算實驗室">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+<link rel=stylesheet href="./assets/css/mainapp.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/clsw2014.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo_lope.jpg">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Applied Lexicology with Big Data</h1>
+    <h2>A Case Study of Measuring Lexical Aging</h2>
+    <p>謝舒凱    台大語言所 語言處理，知識本體與人文計算實驗室<br/>漢語詞彙語義學研討會(CLSW2014),  澳門大學, June 2014</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Outline</h2>
+  </hgroup>
+  <article data-timings="">
+    <!-- comment -->
+
+<ol>
+<li>Introduction</li>
+<li>Lexicology with the BIG DATA</li>
+<li>Measuring Lexical Aging as an Example</li>
+<li>Conclusion</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:#FFFAF0;">
+  <hgroup>
+    <h2>Outline</h2>
+  </hgroup>
+  <article data-timings="">
+    <!--  ========================================================   -->
+
+<ol>
+<li><strong><code>Introduction</code></strong></li>
+<li>Lexicology with the BIG DATA</li>
+<li>Measuring Lexical Aging as an Example</li>
+<li>Conclusion</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Lexicalization and Language Change</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>詞彙與詞彙化的變遷研究</p>
+
+<ul class = "build incremental">
+<li>Language in use is a dynamically developing system adapting to its ever-changing social environment.</li>
+<li>Language change: phenomenon or epiphenomenon (of a static capacity, Lehmann 1993:320)?</li>
+<li>Lexicalization: the process by which new items that are considered &#39;lexical&#39; come into being (Brinton and Traugot, 2005)
+
+<ul>
+<li><strong>adoption into the lexicon</strong></li>
+<li><strong>falling outside the productive rules of grammar</strong></li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The Emergent Lexicon</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>Lexicon is understood as <em>a finite list of forms and the possibilities for combining them</em></p></li>
+<li><p>Functionalistic take on the (Mental) Lexicon (,if any):</p>
+
+<ul>
+<li>&#39;our understanding of both language structure and use is enhanced by the recognition that memory for language is highly affected by language use&#39; (Bybee,1998).</li>
+<li>The memory representation of language consists of units that can constitute utterances or intonation units, i.e., not just words, but also phrases and constructions. </li>
+</ul></li>
+<li><p>It is the <strong>formulation</strong> that annoies linguists.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>The Emergent Lexicon</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[
+\mathbf{Change}_{a,b} = \mathbf{A} \succ \mathbf{B}
+\]</p>
+
+<p>\[
+\mathbf{Change}_{a,b} = \mathbf{A} \succ 
+ \begin{Bmatrix}
+  A \\
+  B 
+ \end{Bmatrix}
+ \succ \mathbf{(B)}
+\]</p>
+
+<p><code>Most attention were paid to the questions &quot;What is in the arrow?&quot; and &quot;How does change come about?&quot;</code></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>The Emergent Lexicon v.2 : Before and After</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>Lexicalization (and grammaticalization) 談的是如何進場 </li>
+<li>網路時代的海量數據引出了語言單位的<strong>生命力</strong>指標量度需求（能活多久或為何退場）? BUT note [pressing <code>p</code>]</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p><q>老詞不死，只是逐漸凋零 Old soldiers never die, they just fade away</q></p>
+
+<p>In some cases words might be <em>dead</em> to all purposes, but could revived by the media periodically for the purpose of <em>irony</em> or <em>parody</em>.</p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Questions to be answered</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Big Three</strong> (Brinton and Traugott, 2005)</p>
+
+<ol>
+<li>The constraint problem: what is the set of possible changes and linguistic conditions for change?</li>
+<li>The transition problem: what are the intresting stages that define the path by which A gives rise to B?</li>
+<li>The actuation problem: how does change start, when and where does it start (&#39;actuation&#39;) and how does it spread through the system (&#39;actualization&#39;)?</li>
+</ol>
+
+<p><strong>Missing</strong></p>
+
+<p><a class="btn btn-large btn-danger" rel="popover" data-content="How does words survive? what is the life cycle?" data-original-title="4th Q" id='example'>The survival problem</a></p>
+
+<p><a id='example' data-content='Change directory doesn't actually change the directory. It changes the shell's idea of which directory we are in' data-original-title='Note'></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:#F0FFF0;">
+  <hgroup>
+    <h2>Neologism and Lexicalization</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>晚近的新詞研究</p>
+
+<ul>
+<li>Neologisms (new entries in the inventory) can be seen as the results of the <em>conception of lexicalization</em>.</li>
+<li>The production of neologisms encompasses a wide variety of linguistic processes, both sybchronic and diachronic.</li>
+<li>Mechanisms involved: <em>create, modify, combine,</em> or <em>separate</em> existing units, and thus lexicalization would seem to include opposing directions of change leading to greater or lesser <strong>dependency</strong> and greater or lesser <strong>compositionality</strong>.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:#F0FFF0;">
+  <hgroup>
+    <h2>Neologism Classification</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>[<code>Renouf&#39;s classification</code> 2013]: <strong>lexical neology</strong> (i.e., newly-coined lexical items) and <strong>semantic neology</strong> (i.e., new sense of word) and <strong>grammatical neology</strong> (i.e., neologisms that change grammatical class). </p>
+
+<!-- new connotative sense? 加倍奉還 --></li>
+<li><p>e.g, <a href="http://www.google.com/trends/explore#q=Arab%20spring&amp;cmpt=q">Arab Spring</a>; troll (an individual who posts inflammatory, rude, and obnoxious comments to an online community); <a href="http://www.wordnik.com/words/friend">friend</a>.</p></li>
+<li><p><em>lexical neology</em> and <em>semantic neology</em> can be identified in a text corpus at surface level by automatic means (by comparing existing lexicon and discovering the change in collocational environments), while <em>grammatical neology</em> can be identified at a post-processing stage of  semantic neology.</p></li>
+</ol>
+
+<!-- http://www.vappingo.com/word-blog/great-examples-of-neologisms/
+Examples of Popular Culture Neologisms
+
+Tebowing: description of a prayerful victory stance derived from NFL quarterback Tim Tebow.
+Brangelina: used to refer to supercouple Brad Pitt and Angelina Jolie.
+Metrosexual: A man who dedicates a great deal of time and money to his appearance.
+Muffin top: This refers to the (often unsightly) roll of fat that appears on top of trousers that feature a low waist.
+Stitch 'n' bitch: A gathering of individuals who chat or gossip while knitting or crocheting.
+BFF: Stands for best friends forever. Used to state how close you are to another individual.
+Vagjayjay: Slang term for the vagina that was believed to have been coined by Oprah.
+Chilax: To calm down or relax, it is a slang term used when someone is starting to get uptight about something that is happening.
+Racne: Acne located on a woman’s chest.
+Staycation: A vacation at home or in the immediate local area.
+
+-->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>複習考 QUIZ</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="quiz quiz-single well ">
+  <p>[魯蛇] 屬於那一類新詞?</p>
+
+<ol>
+<li><em>lexical neology</em></li>
+<li>semantic neology</li>
+<li>grammatical neology</li>
+</ol>
+
+  <button class="quiz-submit btn btn-primary">Submit</button>
+  <button class="quiz-toggle-hint btn btn-info">Show Hint</button>
+  <button class="quiz-show-answer btn btn-success">Show Answer</button>
+  <button class="quiz-clear btn btn-danger">Clear</button>
+  
+  <div class="quiz-hint">
+  <p>韓語：루저남</p>
+
+</div>
+<div class="quiz-explanation">
+  <blockquote>
+<p>Ptt有許多網友喜歡諷刺有成就、或日子過得不錯的人，例如：富二代、公務員等「人生勝利組」，而嘲諷者就被反酸是 loser，例如：失業、領22k、交不到女友等，之後就逐漸出現「魯蛇」的諧音用法取代 loser，在2012年年中時已有這樣的用法，在2012年12月到2013年1月間，這個詞突然開始大流行，先是在八卦版出現，之後也在各大板看板出現，成為2013年（適逢蛇年）初最流行的新用語之一(source:wiki)</p>
+</blockquote>
+
+</div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Neologism Detection in (Computational) Linguistics</h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div class="tabbable">
+  <ul class="nav nav-pills">
+    <li class="tab active"><a href="#language resources" data-toggle="pill">language resources</a></li>
+    <li class="tab "><a href="#algorithms" data-toggle="pill">algorithms</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="language resources">
+      <p>You need <strong>corpus and lexicon</strong> are the prerequisite for an empirical surveys. A <em>reference</em> corpus will make the identification task simpler: An <em>unseen</em> word is matched against the corpus so that it is pinpointed at its first occurrence, and deemed to be a candidate for neologism. (cf. <em>hapax legomena</em>)</p>
+
+    </div>
+    <div class="tab-pane fade in " id="algorithms">
+      <p><img src="assets/img/pipeline.png" alt="Drawing" style="width: 450px;"/></p>
+
+<p>Use <strong>collocational information</strong> to (semi-) automatically determine the candidate&#39;s usage and definition.</p>
+
+    </div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:#FFFAF0;">
+  <article data-timings="">
+    <!--  ========================================================   -->
+
+<h2>Outline</h2>
+
+<!-- comment -->
+
+<ol>
+<li>Introduction</li>
+<li><strong><code>Lexicology with the BIG DATA</code></strong></li>
+<li>Measuring Lexical Aging</li>
+<li>Conclusion</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground quote" id="slide-13" style="background:;">
+  <article data-timings="">
+    <p><q><strong>Lexicology</strong>: the study of the meaning and uses of words   (Lipka, 2002) </q> </p>
+
+<p><img class='center' src="assets/img/lexicology.png" alt="Drawing" style="width: 400px;"/></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Lexicology</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img class='center'src="assets/img/books.png" alt="Drawing" style="width: 1000px;"/></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue" id="slide-15" style="background:indigo;">
+  <hgroup>
+    <h2>BIG DATA : What&#39;s that?</h2>
+  </hgroup>
+  <article data-timings="">
+    <!--__Lexicology__ is the branch of linguistics which studies words. (function, meaning, relations, composition, etc) OK, -->
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>BIG DATA</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/img/bigdata.jpeg' width=800px height=250px>
+</iframe> 
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>BIG DATA</h2>
+  </hgroup>
+  <article data-timings="">
+    <blockquote>
+<p>Next time you run a Google search, think about the fact that it&#39;s just one of 2 million that Google will receive in that minute. In the same amount of time, Facebook users post 684,478 pieces of content. Crazier still, online shoppers spend an average of 272,070 every minute. That&#39;s over 391 million every day — quite the chunk of change. <a href="http://mashable.com/2012/06/22/data-created-every-minute/">cited from here</a></p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="dark nobackground quote" id="slide-18" style="background:;">
+  <article data-timings="">
+    <p><q> BIG Data makes Big Impact ......</q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Reflections on Thirty Years of Scientific Methodology and the Next Thirty</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/img/data_deluge.png' width=800px height=250px>
+</iframe> 
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Google Books for <a href="http://www.culturomics.org/">Culturomics</a></h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Google corpus of digitized texts containing about 6% (over 8
+million books) of all books ever printed.</li>
+</ul>
+
+<blockquote>
+<p>Analysis of this corpus enables us to investigate cultural trends quantitatively. We survey the vast terrain of &#39;culturomics,&#39; focusing on linguistic and cultural phenomena that were reflected in the English language between 1800 and 2000. We show how this approach can provide insights about fields as diverse as <strong>lexicography</strong>, the <strong>evolution of grammar</strong>, collective memory, the adoption of technology, the pursuit of fame, censorship, and historical epidemiology.(<em>Science, 331(6014): 176–82</em>, 2011).</p>
+</blockquote>
+
+<ul>
+<li>CED?? project?? </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Google Books for <a href="http://www.culturomics.org/">Culturomics</a></h2>
+  </hgroup>
+  <article data-timings="">
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h4>The evolution of grammar</h4>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/img/gngram.png' width=800px height=250px>
+</iframe> 
+
+</div>
+
+
+
+<!-- 
+<div style='float:left;width:48%;' class='centered'>
+  <h4>The evolution of grammar</h4>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/img/gngram.png' width=800px height=250px>
+</iframe> 
+
+</div> -->
+
+<!-- ---
+layout: slide
+---
+  
+<div class='left' style='float:left;width:'>
+ 
+</div>    
+<div class='right' style='float:right;width:'>
+ 
+</div>
+ -->
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>From Sequences to Syntactically-annotated corpus (Lin et al. 2012)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>This new edition introduces syntactic annotations: words
+are tagged with their part-of-speech, and head-modifier
+relationships are recorded.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>From Sequences to <em>Dependecy-grammar</em> Syntactically-annotated corpus (<a href="http://googleresearch.blogspot.tw/2013/05/syntactic-ngrams-over-time.html">Goldberg and Orwand, 2013</a>)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><a href="http://storage.googleapis.com/books/syntactic-ngrams/index.html">syntactic-ngrams</a>:  structures in which the contexts of words are based on their respective position in a syntactic parse tree, and not on their sequential order in the sentence.</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img class='center'src="assets/img/syn2.png" alt="Drawing" style="width: 500px;"/></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img class='center'src="assets/img/syn1.png" alt="Drawing" style="width: 500px;"/></p>
+
+</div>
+
+
+
+<!-- <ul>
+<li><a href="http://storage.googleapis.com/books/syntactic-ngrams/index.html">syntactic-ngrams</a>:  structures in which the contexts of words are based on their respective position in a syntactic parse tree, and not on their sequential order in the sentence.</li>
+</ul>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img class='center'src="assets/img/syn2.png" alt="Drawing" style="width: 500px;"/></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img class='center'src="assets/img/syn1.png" alt="Drawing" style="width: 500px;"/></p>
+
+</div> -->
+
+<!-- ---
+layout: slide
+---
+  
+<div class='left' style='float:left;width:'>
+ 
+</div>    
+<div class='right' style='float:right;width:'>
+ 
+</div>
+ -->
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="shout" id="demo" style="background:;">
+  <hgroup>
+    <h1><a href="https://books.google.com/ngrams/">DEMO</a>:</h1>
+  </hgroup>
+  <article data-timings="">
+    <h3>中國人愛什麼?</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Data Science Analytics (makes advances like never before)</h2>
+  </hgroup>
+  <article data-timings="">
+     
+<div class='row-fluid'>
+  <div class='span5'>
+    <form id="knitForm25" data-cell="25">
+      <pre><code class="r">require(googleVis)
+#load(&quot;~/academic_activities/talks and tutorials/2013/ntnu/mot/mot.RData&quot;)
+# head(convdata)
+# head(compdata)
+#Modal &lt;- gvisMotionChart(convdata, idvar=&quot;VERB&quot;, timeva=&quot;DECADE&quot;) 
+#print(Modal, tag =&#39;chart&#39;)
+#plot.gvis(Modal) 
+</code></pre>
+
+      <div id='aceeditor25' style="height:px;"></div>
+      <div class='interactive btn-toolbar pull-left'>
+        <div class='btn-group'>
+          <a class='btn btn-small action-button' id='runCode25' data-action='runCode'
+            data-cell='25' rel='tooltip' data-title='Run Code'>
+            <i class='icon-play'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='testCode25' data-action='testCode'
+             data-cell='25' rel='tooltip' data-title='Test Code'>
+            <i class='icon-check'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='clearResult25' data-action='clearResult'
+             data-cell='25' rel='tooltip' data-title='Clear Output'>
+            <i class="icon-remove"></i>
+          </a>
+          <a class='btn  btn-small iBtn' id='getHint25' rel='tooltip' 
+            data-title="Get Hint" data-action='getHint'
+            data-cell='25' data-hint="">
+            <i class="icon-bookmark"></i>
+          </a>
+        </div>
+      </div>    </form>
+  </div>
+  <div class='span7'>
+    <div id="knitResult25" class='shiny-html-output'></div>
+  </div>
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>New Methodological Issues [1]: Size</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Do we really need (more than) 500 billion words for linguistics?</p>
+
+<ul>
+<li>e.g., <a href="http://corpus.byu.edu/coha/">COHA:THE CORPUS OF HISTORICAL AMERICAN ENGLISH</a> vs. [Google Book ngram] </li>
+</ul>
+
+<p>Are there any <strong>hard rules</strong> regarding how large a corpus ought to be? </p>
+
+<blockquote>
+<p>For the study of prosody (i.e. the rhythm, stress and intonation of speech), a corpus of 100,000 words will usually be big enough to make generalizations; for the analysis of verb-form morphology (i.e. the use of endings such as -ed, -ing and -s to express verb tenses) would require half a million words. (Kennedy (1998: 68)), while Biber (1993) suggests that a million words would be enough for grammatical studies.</p>
+</blockquote>
+
+<p>Depending on you research topic!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>New Methodological Issues [2]: Unit</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A two-edged Sword cuts Both Ways: 
+<code>How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2013)</code></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>(with discrete views on the Units of Lexicon)</li>
+<li>台北市長春藥店; 大都會</li>
+<li><code>這不是朱學恆</code> 效應</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/img/freqspec.pdf' width=200px height=90px>
+</iframe> 
+
+</div>
+
+
+
+<!-- <p>A two-edged Sword cuts Both Ways: 
+<code>How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2013)</code></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>(with discrete views on the Units of Lexicon)</li>
+<li>台北市長春藥店; 大都會</li>
+<li><code>這不是朱學恆</code> 效應</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/img/freqspec.pdf' width=200px height=90px>
+</iframe> 
+
+</div> -->
+
+<!-- ---
+layout: slide
+---
+  
+<div class='left' style='float:left;width:'>
+ 
+</div>    
+<div class='right' style='float:right;width:'>
+ 
+</div>
+ -->
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>New Methodological Issues [2]: Unit</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A two-edged Sword cuts Both Ways: 
+<code>How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2013)</code></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Vocabulary Growth Curve (V1/Vn) already tells you something wrong.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/img/vgc.pdf' width=200px height=90px>
+</iframe> 
+
+</div>
+
+
+
+<!-- <p>A two-edged Sword cuts Both Ways: 
+<code>How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2013)</code></p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>Vocabulary Growth Curve (V1/Vn) already tells you something wrong.</li>
+</ul>
+
+</div>
+<div style='float:right;width:48%;'>
+  <iframe src='assets/img/vgc.pdf' width=200px height=90px>
+</iframe> 
+
+</div> -->
+
+<!-- ---
+layout: slide
+---
+  
+<div class='left' style='float:left;width:'>
+ 
+</div>    
+<div class='right' style='float:right;width:'>
+ 
+</div>
+ -->
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>The BIG LEXICON Project (2014-)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p><strong>Functional take</strong>, again: &#39;the smaller units familiar from structural analysis are <em>not</em> independent units, but rather emerge from the larger stored units via a network of connections among them&#39;.</p></li>
+<li><p>A bold (but sincere) proposal:</p>
+
+<ul>
+<li>Segmentation as annotation (of wordhood)</li>
+<li><strong>Lexical units</strong>  * <strong>Multiple dimensions</strong> (so far: 200,000 * 87 matrix)</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>The BIG LEXICON Project: Variables</h2>
+  </hgroup>
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th><strong>Module.Variable</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>concept.sense</code></td>
+<td>word sense number from <a href="http://lope.linguistics.ntu.edu.tw/cwn/">Chinese Wordnet, CWN</a>, please <a href="http://lope.linguistics.ntu.edu.tw/cwikin/">help</a></td>
+</tr>
+<tr>
+<td><code>concept.gloss</code></td>
+<td>sense definitions from CWN</td>
+</tr>
+<tr>
+<td><code>concept.relations</code></td>
+<td>lexical semantic relations</td>
+</tr>
+<tr>
+<td><code>emotion.polarity</code></td>
+<td>polarity of descriptive emotional words</td>
+</tr>
+<tr>
+<td><code>emotion.location</code></td>
+<td>location collocates of emotion</td>
+</tr>
+<tr>
+<td><code>emotion.cause</code></td>
+<td>cause collocates</td>
+</tr>
+<tr>
+<td><code>emotion.result</code></td>
+<td>resulting event collocates</td>
+</tr>
+<tr>
+<td><code>emotion.time</code></td>
+<td>time collocates</td>
+</tr>
+<tr>
+<td><code>frequency.asbc</code></td>
+<td>frequency of Sinica Corpus</td>
+</tr>
+<tr>
+<td><code>frequency.plurk</code></td>
+<td>frequency of Plurk Corpus</td>
+</tr>
+<tr>
+<td><code>frequency.childes</code></td>
+<td>frequency of CHILDES Corpus</td>
+</tr>
+<tr>
+<td><code>frequency.ptt</code></td>
+<td>frequency of PTT</td>
+</tr>
+</tbody></table>
+
+<p><strong>AND MANY MORE!</strong> modules in progress: 情緒 發展歷程 語義 使用頻率 年紀 關係 性別 教學難易 部首概念 意類 知識本體 社會心理人格 . . . . . . . . . . . . . .  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="centrepre" id="slide-31">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><strong>Think BIG With BIG LEXICON</strong> 
+(what you&#39;d ever want to know about the <em>Lexicon</em>)</p>
+
+<p><a class='example'>Example</a></p>
+
+<pre><code>---
+Question: 
+---
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="centrepre" id="slide-32">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><a class='example'>Your Turn</a></p>
+
+<pre><code>Brainstorm: what are some of the trends/corelation 
+that you  might want to explore? What additional 
+variables would you need to create? What other 
+data sources might you want to use? Pair up and 
+brainstorm for 1 minute.
+</code></pre>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="nobackground quote" id="slide-33" style="background:;">
+  <article data-timings="">
+    <p><q> We believe the <strong>BIG Lexicon</strong> should be the new infrastructure for linguistics, and invite you to join in us.</q></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:#FFFAF0;">
+  <article data-timings="">
+    <!--  ========================================================   -->
+
+<h2>Outline</h2>
+
+<ol>
+<li>Introduction</li>
+<li>Lexicology with the BIG DATA</li>
+<li><strong><code>Measuring Lexical Aging</code></strong></li>
+<li>Conclusion</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Not uxorious anymore?</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/img/uxorious.png' width=200px height=90px>
+</iframe> 
+
+<p>press <em>p</em> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <iframe src='assets/img/ux.png' width=200px height=90px>
+</iframe> 
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>Modeling Neologistic Behavour [1]</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Stage in Life-cycle (Renouf, 2013)</p>
+
+<ul>
+<li>Increase in frequency: gradual, or sudden if in vogue</li>
+<li>Orthographic adjustment</li>
+<li>Lexical productivity</li>
+<li>Creativity</li>
+<li>Settling down</li>
+<li>Obsolescence</li>
+<li>Death</li>
+<li>Re-birth or revival</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Modeling Lexical Aging: First try (Liu,Hsieh and Prevot, 2013)</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><strong>Proper nouns</strong> are ruled out, for they are mostly propelled into the media glare due to a real-world event ot popular preoccupation.</li>
+<li>PTT-based (2015-2012, 八卦版+就可版+笨版), preproceesed.</li>
+</ul>
+
+<p><img src="assets/img/ptt.png" alt="Drawing" style="width: 600px;"/></p>
+
+<ul>
+<li>Time series predictive model against human judgement.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>PTT Corpus</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/pttcorpus.png" alt="Drawing" style="width: 600px;"/></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>Results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/result.png" alt="Drawing" style="width: 900px;"/></p>
+
+<ul>
+<li>These large, short-term fluctuations add an important new dimension to the study of the long-term dynamics of language, as any novel expression must survive in the short
+term to survive in the long term. (Altmann, 2011)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>Results</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src='assets/img/timeseries.pdf' width=200px height=90px>
+</iframe> 
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>Modeling Lexical Aging: Our Second Comings</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Use <code>google book ngram</code> as training data (to infer the laws), and <code>ptt</code> as test data.</p></li>
+<li><p>Previous efforts exploit the syntagmatic patterns of a candidate neologism (e.g., via <code>collocate profile</code>).</p></li>
+<li><p>we propose to incorporate paradigmatic patterns (via <code>social network</code> of the candidate).</p></li>
+<li><p>Evaulate the preditions against large-scale human jugements (via questionnaire web application or APP games)</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>Modeling Lexical Aging: Our Second Comings</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Special considerations</strong></p>
+
+<p>詞彙不像人，可以離群索居，成就自己的意義。詞彙的意義是透過系統間的關係相對定義出來的。
+因此詞彙的社會行為。(以魯蛇為例，利用批踢踢找出共現，算出相𨶙詞彙，算出依存度)。</p>
+
+<ol>
+<li><p>Frequency Diversity (e.g., the dissemination of words across individuals/generations/topics/)</p></li>
+<li><p>Strength of Ties</p></li>
+<li><p>Niche (when different forms compete to express the same meaning)</p></li>
+</ol>
+
+<pre><code>**Distributional Semantic Model**
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:#FFFAF0;">
+  <hgroup>
+    <h2>Outline</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Introduction</li>
+<li>Lexicology with the BIG DATA</li>
+<li>Measuring Lexical Aging</li>
+<li><strong><code>Conclusion</code></strong></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>Where do we go from here?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>大數據正在改變語言學 Big data help us understand the nature of linguistic and cultural dynamicality.</li>
+<li>詞彙生命量度是個測試好例子 Measuring/modeling Lexical aging involves every aspects of lexicology.</li>
+<li>大詞庫將是必備工具箱 We hope that this study could serve as an invitation to lexicologists in exploring their <em>lexical data</em> beyond micro-levels of analysis, and using big data as the &#39;toolkit&#39; to map the contours of lexicology.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>Implications and Applications</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>模擬語言變遷的機會 Modeling lexical changes</li>
+<li>重估新詞的地位 OOV reestimation in NLP</li>
+<li>客觀化辭典收詞標準Measures are useful for <strong>lexicographers, translators</strong> and <strong>terminologists</strong>. 
+
+<ul>
+<li><a href="http://www.merriam-webster.com/help/faq/words_in.htm">Traditional ways</a> to decide which words to include in the dictionary and to determine what they mean could be improved/enhanced with computational linguistics.</li>
+</ul></li>
+</ul>
+
+<pre><code>OH, MY, &quot;Won’t *twerking* just go away?&quot; 
+or is it *twerking* its way into the dictionary?
+[press p to look into story]
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <!--http://artsbeat.blogs.nytimes.com/2013/08/28/oxford-english-dictionary-learns-how-to-twerk/?_r=0
+-->
+
+<p><img src="assets/img/twerk.png" alt="Drawing" style="width: 300px;"/></p>
+
+<p>In the days following Miley Cyrus’s much-discussed bump-and-grind performance at Sunday’s MTV Video Music Awards, the word “twerk” — that is, to dance “in a sexually provocative manner involving thrusting hip movements and a low, squatting stance” — seems to be ubiquitous. It’s on the tip of the tongue of nearly every television host, and a search of LexisNexis archives turns up the word in more than 250 news articles in the last week alone.</p>
+
+    </section>
+  </aside>
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>Acknowledgements</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>王伯雅, 劉純睿, Ramnathv (Slidify)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>Reference</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Altmann, E.G., Pierrehumbert, J.B., Motter, A.E.. Niche as a determinant of word fate in online groups. <em>PLoS ONE 6(5), e19009</em> (2011).</p></li>
+<li><p>Altmann, E.G. Zakary L. Whichard, Motter, A.E.. Identifying Trends in Word Frequency Dynamics. <em>J Stat Phys151</em> (2013).</p></li>
+<li><p>Renouf, Antoinette. A Finer Definition of Neology in English—The Life-cycle of a word. <em>Studies in Corpus Linguistics 57.</em> (2013).</p></li>
+<li><p>Petersen, Alexander  et. al. Statistical Laws Governing Fluctuations in Word Use from Word Birth to Word Death. <em>Scientific Report</em> 2:313. (2012).</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="myslide" style="background:;">
+  <hgroup>
+    <h2>詞彙股票 (source: Ramnathv)</h2>
+  </hgroup>
+  <article data-timings="">
+    <script>
+$('#myslide').on('slideenter', function(){
+  $(this).find('article')
+    .append('<iframe src="http://bl.ocks.org/mbostock/raw/1256572/"></iframe>')
+});
+$('#myslide').on('slideleave', function(){
+  $(this).find('iframe').remove();
+});
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Outline'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Outline'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Lexicalization and Language Change'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Emergent Lexicon'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='The Emergent Lexicon'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='The Emergent Lexicon v.2 : Before and After'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Questions to be answered'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Neologism and Lexicalization'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Neologism Classification'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='複習考 QUIZ'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Neologism Detection in (Computational) Linguistics'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title=''>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title=''>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Lexicology'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='BIG DATA : What&#39;s that?'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='BIG DATA'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='BIG DATA'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='Reflections on Thirty Years of Scientific Methodology and the Next Thirty'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Google Books for <a href="http://www.culturomics.org/">Culturomics</a>'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Google Books for <a href="http://www.culturomics.org/">Culturomics</a>'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='From Sequences to Syntactically-annotated corpus (Lin et al. 2012)'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='From Sequences to <em>Dependecy-grammar</em> Syntactically-annotated corpus (<a href="http://googleresearch.blogspot.tw/2013/05/syntactic-ngrams-over-time.html">Goldberg and Orwand, 2013</a>)'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='<a href="https://books.google.com/ngrams/">DEMO</a>:'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Data Science Analytics (makes advances like never before)'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='New Methodological Issues [1]: Size'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='New Methodological Issues [2]: Unit'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='New Methodological Issues [2]: Unit'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='The BIG LEXICON Project (2014-)'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='The BIG LEXICON Project: Variables'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title=''>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title=''>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title=''>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title=''>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Not uxorious anymore?'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Modeling Neologistic Behavour [1]'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Modeling Lexical Aging: First try (Liu,Hsieh and Prevot, 2013)'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='PTT Corpus'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='Results'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='Results'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='Modeling Lexical Aging: Our Second Comings'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='Modeling Lexical Aging: Our Second Comings'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='Outline'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='Where do we go from here?'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Implications and Applications'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='Acknowledgements'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='Reference'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='詞彙股票 (source: Ramnathv)'>
+         48
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
+
