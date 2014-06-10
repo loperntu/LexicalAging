@@ -14726,11 +14726,10 @@ Depending on you research topic!
 ## New Methodological Issues [2]: Unit
 
 A two-edged Sword cuts Both Ways: 
-`How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2013)`
-- (with discrete views on the Units of Lexicon)
-- `全台大都會計算這題｀
-`阿里巴巴領導人馬雲端出新服務`
+`How BIG DATA __kill__ Chinese Corpus Linguistics (Hsieh, 2014)`
 
+- Structural ambiguity: `全台大都會計算這題`  ,   `阿里巴巴領導人馬雲端出新服務`
+- (with discrete views on the Units of Lexicon)
 
 
 ---&twocol
@@ -14739,14 +14738,13 @@ A two-edged Sword cuts Both Ways:
 
 *** =left
 
-- `這不是朱學恆` 效應
-
-*** =right
 <iframe src='assets/img/plurk_hapax.png' width=200px height=90px>
 </iframe> 
 
 
+*** =right
 
+- `這不是朱學恆` 效應: 朱學恆 (Nb), 朱學(Na)恆(D)
 
 --- &twocol 
 
@@ -14841,7 +14839,7 @@ A two-edged Sword cuts Both Ways:
 ## Outline
 
 1. Introduction
-2. Lexicology with the BIG DATA
+2. Applied Lexicology with the BIG DATA
 3. __`Measuring Lexical Aging`__
 4. Conclusion
 
@@ -14878,10 +14876,11 @@ press *p*
 
 ## Modeling Lexical Aging: First try (Liu,Hsieh and Prevot, 2013)
 
-- **Proper nouns** are ruled out, for they are mostly propelled into the media glare due to a real-world event ot popular preoccupation.
 - PTT-based (2015-2012, 八卦版+就可版+笨版), preproceesed.
 
 <img src="assets/img/ptt.png" alt="Drawing" style="width: 600px;"/>
+
+- **Proper nouns** are ruled out, for they are mostly propelled into the media glare due to a real-world event ot popular preoccupation.
 
 - **Time series predictive model** against human judgement.
 
@@ -14956,7 +14955,7 @@ term to survive in the long term. (Altmann, 2011)
 ## Outline
 
 1. Introduction
-2. Lexicology with the BIG DATA
+2. Applied Lexicology with the BIG DATA
 3. Measuring Lexical Aging
 4. __`Conclusion`__
 
@@ -14994,11 +14993,6 @@ In the days following Miley Cyrus’s much-discussed bump-and-grind performance 
 
 
 
----
-
-## Acknowledgements
-
-王伯雅, 劉純睿, Ramnathv (Slidify)
 
 ---
 
@@ -15012,7 +15006,14 @@ In the days following Miley Cyrus’s much-discussed bump-and-grind performance 
 - Petersen, Alexander  et. al. Statistical Laws Governing Fluctuations in Word Use from Word Birth to Word Death. *Scientific Report* 2:313. (2012).
 
 
+---
 
+## Acknowledgements
+
+王伯雅, 劉純睿, Ramnathv (Slidify)
+
+
+<!--
 --- #myslide
 
 ## 詞彙股票 (source: Ramnathv)
@@ -15027,7 +15028,7 @@ $('#myslide').on('slideleave', function(){
 });
 </script>
 
-
+-->
 
 
 
